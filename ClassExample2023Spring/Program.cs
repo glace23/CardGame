@@ -7,11 +7,12 @@ Console.Write("Enter your name: ");
 Player currentPlayer = new(Console.ReadLine()!);
 
 currentPlayer.Hand.Cards = myDeck.DealCards(5);
+currentPlayer.Hand.CreateCardGroup();
 currentPlayer.ShowHand();
 
 Console.WriteLine($"Player has Ace in Hand? {currentPlayer.CheckForRank("A")}" );
 Console.WriteLine($"Player has a pair? {currentPlayer.Hand.CheckForPairs()}");
 
 
-
+Console.WriteLine($"Player has scored: {currentPlayer.Hand.CheckRank()}");
 
